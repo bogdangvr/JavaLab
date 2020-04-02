@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1d52d83b-355a-4a12-b6d8-c2453d5b8be2" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZyFk3p8TIthemGVodbjgALfEOa" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="exceptions" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Ex3 (1)">
+    <configuration name="Ex1 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exceptions.ex3.Ex1" />
+      <module name="lab6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exceptions.ex3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ex2 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exceptions.ex3.Ex2" />
+      <module name="lab6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exceptions.ex3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ex3 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exceptions.ex3.Ex3" />
+      <module name="lab6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exceptions.ex3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ex3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exceptions.ex1.Ex3" />
+      <module name="lab6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exceptions.ex1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exceptions.ex2.Main" />
+      <module name="lab6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exceptions.ex2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Ex3 (1)" />
+        <item itemvalue="Application.Ex2 (1)" />
+        <item itemvalue="Application.Ex1 (1)" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Ex3" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1d52d83b-355a-4a12-b6d8-c2453d5b8be2" name="Default Changelist" comment="" />
+      <created>1585803566583</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585803566583</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="939" y="230" key="#Project_Structure" timestamp="1585804057743">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="939" y="230" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1585804057743" />
+    <state x="1502" y="248" key="#com.intellij.ide.util.MemberChooser" timestamp="1585809841821">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1502" y="248" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585809841821" />
+    <state x="1502" y="450" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1585804184630">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1502" y="450" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1920.1040@0.0.1920.1040" timestamp="1585804184630" />
+    <state width="1340" height="266" key="GridCell.Tab.0.bottom" timestamp="1585810567105">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585810567105" />
+    <state width="1340" height="266" key="GridCell.Tab.0.center" timestamp="1585810567105">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="266" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585810567105" />
+    <state width="1340" height="266" key="GridCell.Tab.0.left" timestamp="1585810567105">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="266" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585810567105" />
+    <state width="1340" height="266" key="GridCell.Tab.0.right" timestamp="1585810567105">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="266" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585810567105" />
+    <state width="1340" height="328" key="GridCell.Tab.1.bottom" timestamp="1585808256850">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="328" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585808256850" />
+    <state width="1340" height="328" key="GridCell.Tab.1.center" timestamp="1585808256849">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="328" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585808256849" />
+    <state width="1340" height="328" key="GridCell.Tab.1.left" timestamp="1585808256849">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="328" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585808256849" />
+    <state width="1340" height="328" key="GridCell.Tab.1.right" timestamp="1585808256849">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="328" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585808256849" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/exceptions/ex1/Ex3.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
