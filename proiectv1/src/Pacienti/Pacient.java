@@ -39,8 +39,8 @@ public abstract class Pacient implements Comparable<Pacient>{
     public void mergeConsultatie(Medic medic){
         medic.consulta(this);
     }
+
     public void faceAnalize(Receptionist receptionist){
-        System.out.println("Face analize!");
         this.setInformatiiSuficiente(true);
         this.setDataAnalize(-1);
         if (this.beneficiarReducere()){
@@ -180,9 +180,9 @@ public abstract class Pacient implements Comparable<Pacient>{
 
     @Override
     public int compareTo(Pacient o) {
-        if (this.getDataAnalize()==o.getDataAnalize()){
-            return this.getDataConsultatie()-o.getDataConsultatie();
+        if (this.getDataConsultatie()==o.getDataConsultatie()){
+            return this.getDataAnalize()-o.getDataAnalize();
         }
-        return this.getDataAnalize()-o.getDataAnalize();
+        return this.getDataConsultatie()-o.getDataConsultatie();
     }
 }

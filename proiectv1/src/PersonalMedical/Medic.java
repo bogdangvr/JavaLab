@@ -12,6 +12,8 @@ public abstract class Medic {
     protected int nrPacienti=0;
     protected int nrPacientiTratati=0;
     private static int contorMedici = 0;
+    private int ziDisponibila = 0;
+    private int nrPacientiUltimaZi = 0;
     private Vector<Integer> pacienti = new Vector<>();
 
     //metode:
@@ -56,5 +58,21 @@ public abstract class Medic {
 
     public int getNrPacienti() {
         return nrPacienti;
+    }
+
+    public int getZiDisponibila() {
+        return ziDisponibila;
+    }
+
+    public void setZiDisponibila(int ziDisponibila) {
+        this.ziDisponibila = ziDisponibila;
+    }
+
+    public int getNrPacientiUltimaZi() {
+        return nrPacientiUltimaZi;
+    }
+
+    public void setNrPacientiUltimaZi(int nrPacientiUltimaZi) {
+        this.nrPacientiUltimaZi = nrPacientiUltimaZi;
     }
 }

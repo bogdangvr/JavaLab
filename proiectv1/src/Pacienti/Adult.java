@@ -23,10 +23,6 @@ public class Adult extends Pacient{
         }
     }
 
-    void consultatie(){}
-    void vizitaMedic(){}
-    void vizitaLaborator(){}
-
 
     public void apel(Receptionist receptionist){
         boolean suficienteInformatii = receptionist.verificaInformatiiSuficiente(this);

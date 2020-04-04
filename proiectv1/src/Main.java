@@ -22,7 +22,6 @@ public class Main {
         varsta = scanner.nextInt();
         scanner.nextLine();
         Receptionist receptionist = new Receptionist(nume, varsta);
-        System.out.println(receptionist.toString());
 
         Laborator laborator = new Laborator();
         System.out.println("Introduceti numarul maxim de analize pe care le poate efectua laboratorul zilnic: ");
@@ -150,6 +149,10 @@ public class Main {
 
         int nrPacientiTratati=0;
         int ziCurenta = 0;
+
+        for (int i=0; i<nrPacienti; i++){
+            System.out.println(listaPacienti.get(i));
+        }
 
         while (nrPacientiTratati<nrPacienti){
             //sortam pacientii dupa data vizitei la laborator apoi dupa data vizitei la medic:

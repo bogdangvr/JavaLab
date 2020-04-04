@@ -21,7 +21,6 @@ public class Copil extends Pacient{
         }
     }
 
-    void consultatie(){}
     public void apel(Receptionist receptionist){
         boolean suficienteInformatii = receptionist.verificaInformatiiSuficiente(this);
         if (suficienteInformatii){
@@ -31,8 +30,6 @@ public class Copil extends Pacient{
             this.setDataAnalize(receptionist.programeazaAnalize(this));
         }
     }
-    void vizitaMedic(){}
-    void vizitaLaborator(){}
 
     @Override
     public String toString() {

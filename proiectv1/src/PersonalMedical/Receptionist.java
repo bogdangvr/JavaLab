@@ -44,10 +44,17 @@ public class Receptionist {
                     if (listaMedici[i].getNrPacienti()==0){
                         ziProgramare=0;
                         medic = listaMedici[i].getId();
+                        if (listaMedici[i].getNrMaximPacientiZilnic()!=1) {
+                            listaMedici[i].setNrPacientiUltimaZi(1);
+                        }
+                        else{
+                            listaMedici[i].setZiDisponibila(listaMedici[i].getZiDisponibila()+1);
+                        }
+                        break;
                     }
                     else {
-                        if (listaMedici[i].getNrPacienti() / listaMedici[i].getNrMaximPacientiZilnic() < ziProgramare) {
-                            ziProgramare = listaMedici[i].getPacienti().size() / listaMedici[i].getNrMaximPacientiZilnic();
+                        if (listaMedici[i].getZiDisponibila() < ziProgramare) {
+                            ziProgramare = listaMedici[i].getZiDisponibila();
                             medic = listaMedici[i].getId();
                         }
                     }
@@ -61,10 +68,17 @@ public class Receptionist {
                         if (listaMedici[i].getNrPacienti()==0){
                             ziProgramare=0;
                             medic = listaMedici[i].getId();
+                            if (listaMedici[i].getNrMaximPacientiZilnic()!=1) {
+                                listaMedici[i].setNrPacientiUltimaZi(1);
+                            }
+                            else{
+                                listaMedici[i].setZiDisponibila(listaMedici[i].getZiDisponibila()+1);
+                            }
+                            break;
                         }
                         else {
-                            if (listaMedici[i].getNrPacienti() / listaMedici[i].getNrMaximPacientiZilnic() < ziProgramare) {
-                                ziProgramare = listaMedici[i].getPacienti().size() / listaMedici[i].getNrMaximPacientiZilnic();
+                            if (listaMedici[i].getZiDisponibila() < ziProgramare) {
+                                ziProgramare = listaMedici[i].getZiDisponibila();
                                 medic = listaMedici[i].getId();
                             }
                         }
@@ -75,12 +89,20 @@ public class Receptionist {
                 if (pacient.isInflamareGat()){
                     for (int i=0; i<nrMedici; i++) {
                         if (listaMedici[i] instanceof Orl) {
-                            if (listaMedici[i].getNrPacienti() == 0) {
-                                ziProgramare = 0;
+                            if (listaMedici[i].getNrPacienti()==0){
+                                ziProgramare=0;
                                 medic = listaMedici[i].getId();
-                            } else {
-                                if (listaMedici[i].getNrPacienti() / listaMedici[i].getNrMaximPacientiZilnic() < ziProgramare) {
-                                    ziProgramare = listaMedici[i].getPacienti().size() / listaMedici[i].getNrMaximPacientiZilnic();
+                                if (listaMedici[i].getNrMaximPacientiZilnic()!=1) {
+                                    listaMedici[i].setNrPacientiUltimaZi(1);
+                                }
+                                else{
+                                    listaMedici[i].setZiDisponibila(listaMedici[i].getZiDisponibila()+1);
+                                }
+                                break;
+                            }
+                            else {
+                                if (listaMedici[i].getZiDisponibila() < ziProgramare) {
+                                    ziProgramare = listaMedici[i].getZiDisponibila();
                                     medic = listaMedici[i].getId();
                                 }
                             }
@@ -94,10 +116,17 @@ public class Receptionist {
                                 if (listaMedici[i].getNrPacienti()==0){
                                     ziProgramare=0;
                                     medic = listaMedici[i].getId();
+                                    if (listaMedici[i].getNrMaximPacientiZilnic()!=1) {
+                                        listaMedici[i].setNrPacientiUltimaZi(1);
+                                    }
+                                    else{
+                                        listaMedici[i].setZiDisponibila(listaMedici[i].getZiDisponibila()+1);
+                                    }
+                                    break;
                                 }
                                 else {
-                                    if (listaMedici[i].getNrPacienti() / listaMedici[i].getNrMaximPacientiZilnic() < ziProgramare) {
-                                        ziProgramare = listaMedici[i].getPacienti().size() / listaMedici[i].getNrMaximPacientiZilnic();
+                                    if (listaMedici[i].getZiDisponibila() < ziProgramare) {
+                                        ziProgramare = listaMedici[i].getZiDisponibila();
                                         medic = listaMedici[i].getId();
                                     }
                                 }
@@ -111,10 +140,17 @@ public class Receptionist {
                                     if (listaMedici[i].getNrPacienti()==0){
                                         ziProgramare=0;
                                         medic = listaMedici[i].getId();
+                                        if (listaMedici[i].getNrMaximPacientiZilnic()!=1) {
+                                            listaMedici[i].setNrPacientiUltimaZi(1);
+                                        }
+                                        else{
+                                            listaMedici[i].setZiDisponibila(listaMedici[i].getZiDisponibila()+1);
+                                        }
+                                        break;
                                     }
                                     else {
-                                        if (listaMedici[i].getNrPacienti() / listaMedici[i].getNrMaximPacientiZilnic() < ziProgramare) {
-                                            ziProgramare = listaMedici[i].getPacienti().size() / listaMedici[i].getNrMaximPacientiZilnic();
+                                        if (listaMedici[i].getZiDisponibila() < ziProgramare) {
+                                            ziProgramare = listaMedici[i].getZiDisponibila();
                                             medic = listaMedici[i].getId();
                                         }
                                     }
@@ -128,6 +164,13 @@ public class Receptionist {
         for (int i=0; i<nrMedici; i++){
             if (listaMedici[i].getId()==medic){
                 listaMedici[i].adaugaPacient(pacient.getId());
+                if (listaMedici[i].getNrPacientiUltimaZi()+1==listaMedici[i].getNrMaximPacientiZilnic()+1){
+                    listaMedici[i].setZiDisponibila(listaMedici[i].getZiDisponibila()+1);
+                    listaMedici[i].setNrPacientiUltimaZi(1);
+                }
+                else{
+                    listaMedici[i].setNrPacientiUltimaZi(listaMedici[i].getNrPacientiUltimaZi()+1);
+                }
                 pacient.setIdMedic(medic);
             }
         }
@@ -140,7 +183,7 @@ public class Receptionist {
         pacient.setDataAnalize(ziProgramare);
         laborator.setNrPacienti(laborator.getNrPacienti()+1);
         laborator.getPacienti().add(pacient.getId());
-        return 1;
+        return ziProgramare;
     };
 
     public Receptionist(String nume, int varsta) {
