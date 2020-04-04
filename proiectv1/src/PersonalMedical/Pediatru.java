@@ -1,8 +1,12 @@
 package PersonalMedical;
 
+import Pacienti.Copil;
+import Pacienti.Pacient;
+
 public class Pediatru extends Medic {
     void consulta(){};
     void trateaza(){};
+    double costTratament=40;
 
     public Pediatru(String nume, int nrMaximPacientiZilnic) {
         super(nume, nrMaximPacientiZilnic);
@@ -16,5 +20,17 @@ public class Pediatru extends Medic {
                 ", nrMaximPacientiZilnic=" + getNrMaximPacientiZilnic() +
                 ", pacienti=" + getPacienti() +
                 '}';
+    }
+
+    @Override
+    public void consulta(Pacient pacient) {
+
+        pacient.setInflamareGat(false);
+        pacient.setDurereMasea(false);
+        pacient.setTensiuneAnormala(false);
+        pacient.setVedereNeclara(false);
+        pacient.setTratat(true);
+        pacient.setCostTratament(pacient.getCostTratament()+this.costTratament);
+
     }
 }

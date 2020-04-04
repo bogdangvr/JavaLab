@@ -28,12 +28,12 @@ public class Adult extends Pacient{
     void vizitaLaborator(){}
 
 
-    int apel(Receptionist receptionist){
+    public void apel(Receptionist receptionist){
         boolean suficienteInformatii = receptionist.verificaInformatiiSuficiente(this);
         if (suficienteInformatii){
             this.setDataConsultatie(receptionist.programeazaConsultatie(this));
         }
-        else{
+        else {
             this.setDataAnalize(receptionist.programeazaAnalize(this));
         }
     }
@@ -43,7 +43,9 @@ public class Adult extends Pacient{
         return "Adult{" +
                 "nume=" + getNume() +
                 ", varsta=" + getVarsta() +
-                ", varsta=" + getId() +
+                ", id=" + getId() +
+                ", data programare laborator=" + getDataAnalize() +
+                ", data programare consultatie=" + getDataConsultatie() +
                 ", beneficiarReducere=" + beneficiarReducere +
                 ", tratat=" + tratat +
                 ", informatiiSuficiente=" + informatiiSuficiente +
@@ -52,5 +54,10 @@ public class Adult extends Pacient{
                 ", durereMasea=" + durereMasea +
                 ", vedereNeclara=" + vedereNeclara +
                 '}';
+    }
+
+    @Override
+    public boolean beneficiarReducere() {
+        return true;
     }
 }

@@ -1,27 +1,30 @@
 package PersonalMedical;
 
-import java.util.Arrays;
+import Pacienti.Pacient;
+
 import java.util.Vector;
 
 public abstract class Medic {
     //date personale:
     private String nume;
     private int id;
-    private int nrMaximPacientiZilnic;
+    protected int nrMaximPacientiZilnic;
+    protected int nrPacienti=0;
+    protected int nrPacientiTratati=0;
     private static int contorMedici = 0;
-    private Vector pacienti;
+    private Vector<Integer> pacienti = new Vector<>();
 
     //metode:
-    abstract void consulta();
-    abstract void trateaza();
+    public abstract void consulta(Pacient pacient);
     public void adaugaPacient (int id){
-        pacienti.add(id);
+        this.pacienti.add(id);
+        nrPacienti++;
     }
 
     @Override
     public String toString() {
         return "Medic{" +
-                "nume='" + nume + '\'' +
+                "nume='" + nume +
                 ", id=" + id +
                 ", nrMaximPacientiZilnic=" + nrMaximPacientiZilnic +
                 ", pacienti=" + pacienti +
@@ -47,7 +50,11 @@ public abstract class Medic {
         return nrMaximPacientiZilnic;
     }
 
-    public Vector getPacienti() {
+    public Vector<Integer> getPacienti() {
         return pacienti;
+    }
+
+    public int getNrPacienti() {
+        return nrPacienti;
     }
 }

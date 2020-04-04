@@ -1,8 +1,8 @@
 package Pacienti;
 
-public class Copil extends Pacient{
+import PersonalMedical.Receptionist;
 
-    final private boolean beneficiarReducere=true;
+public class Copil extends Pacient{
 
     public Copil(String nume, int varsta, int afectiune) {
         super(nume, varsta);
@@ -22,7 +22,15 @@ public class Copil extends Pacient{
     }
 
     void consultatie(){}
-    void apel(){}
+    public void apel(Receptionist receptionist){
+        boolean suficienteInformatii = receptionist.verificaInformatiiSuficiente(this);
+        if (suficienteInformatii){
+            this.setDataConsultatie(receptionist.programeazaConsultatie(this));
+        }
+        else {
+            this.setDataAnalize(receptionist.programeazaAnalize(this));
+        }
+    }
     void vizitaMedic(){}
     void vizitaLaborator(){}
 
@@ -31,8 +39,9 @@ public class Copil extends Pacient{
         return "Copil{" +
                 "nume=" + getNume() +
                 ", varsta=" + getVarsta() +
-                ", varsta=" + getId() +
-                ", beneficiarReducere=" + beneficiarReducere +
+                ", id=" + getId() +
+                ", data programare laborator=" + getDataAnalize() +
+                ", data programare consultatie=" + getDataConsultatie() +
                 ", tratat=" + tratat +
                 ", informatiiSuficiente=" + informatiiSuficiente +
                 ", tensiuneAnormala=" + tensiuneAnormala +
@@ -40,5 +49,10 @@ public class Copil extends Pacient{
                 ", durereMasea=" + durereMasea +
                 ", vedereNeclara=" + vedereNeclara +
                 '}';
+    }
+
+    @Override
+    public boolean beneficiarReducere() {
+        return true;
     }
 }

@@ -1,20 +1,22 @@
 package Pacienti;
 
+import PersonalMedical.Medic;
 import PersonalMedical.Receptionist;
 
 import java.lang.Math;
+import java.util.Comparator;
 
-public abstract class Pacient {
+public abstract class Pacient implements Comparable<Pacient>{
     //date personale:
     private String nume;
     private int varsta;
     private int id;
-    private int dataConsultatie;
-    private int dataAnalize;
+    protected int dataConsultatie = -1;
+    protected int dataAnalize = -1;
     protected boolean tratat=false;
     protected boolean informatiiSuficiente;
     private static int contorPacienti = 0;
-    private double costTratament;
+    protected double costTratament;
 
 
     //afectiune:
@@ -27,22 +29,39 @@ public abstract class Pacient {
     protected int idMedic;
 
     //metode:
-    abstract void consultatie();
 
     //returneaza data programarii
-    abstract int apel(Receptionist receptionist);
+    public abstract void apel(Receptionist receptionist);
+
+    abstract public boolean beneficiarReducere();
 
 
-    abstract void vizitaMedic();
-    abstract void vizitaLaborator();
+    public void mergeConsultatie(Medic medic){
+        medic.consulta(this);
+    }
+    public void faceAnalize(Receptionist receptionist){
+        System.out.println("Face analize!");
+        this.setInformatiiSuficiente(true);
+        this.setDataAnalize(-1);
+        if (this.beneficiarReducere()){
+            costTratament+=(receptionist.getLaborator().getCostAnalize()/2);
+        }
+        else{
+            costTratament+=receptionist.getLaborator().getCostAnalize();
+        }
+        this.apel(receptionist);
+
+    }
 
     @Override
     public String toString() {
         return "Pacient{" +
-                "nume='" + nume + '\'' +
+                "nume='" + nume +
                 ", varsta=" + varsta +
                 ", id=" + id +
                 ", tratat=" + tratat +
+                ", data programare laborator=" + getDataAnalize() +
+                ", data programare consultatie=" + getDataConsultatie() +
                 '}';
     }
 
@@ -137,5 +156,33 @@ public abstract class Pacient {
 
     public void setDataAnalize(int dataAnalize) {
         this.dataAnalize = dataAnalize;
+    }
+
+    public int getDataConsultatie() {
+        return dataConsultatie;
+    }
+
+    public int getDataAnalize() {
+        return dataAnalize;
+    }
+
+    public boolean isTratat() {
+        return tratat;
+    }
+
+    public void setIdMedic(int idMedic) {
+        this.idMedic = idMedic;
+    }
+
+    public double getCostTratament() {
+        return costTratament;
+    }
+
+    @Override
+    public int compareTo(Pacient o) {
+        if (this.getDataAnalize()==o.getDataAnalize()){
+            return this.getDataConsultatie()-o.getDataConsultatie();
+        }
+        return this.getDataAnalize()-o.getDataAnalize();
     }
 }

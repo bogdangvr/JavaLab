@@ -1,5 +1,7 @@
 package Pacienti;
 
+import PersonalMedical.Receptionist;
+
 public class Pensionar extends Pacient{
 
     final private boolean beneficiarReducere=true;
@@ -22,7 +24,15 @@ public class Pensionar extends Pacient{
     }
 
     void consultatie(){}
-    void apel(){}
+    public void apel(Receptionist receptionist){
+        boolean suficienteInformatii = receptionist.verificaInformatiiSuficiente(this);
+        if (suficienteInformatii){
+            this.setDataConsultatie(receptionist.programeazaConsultatie(this));
+        }
+        else {
+            this.setDataAnalize(receptionist.programeazaAnalize(this));
+        }
+    }
     void vizitaMedic(){}
     void vizitaLaborator(){}
 
@@ -31,7 +41,9 @@ public class Pensionar extends Pacient{
         return "Pensionar{" +
                 "nume=" + getNume() +
                 ", varsta=" + getVarsta() +
-                ", varsta=" + getId() +
+                ", id=" + getId() +
+                ", data programare laborator=" + getDataAnalize() +
+                ", data programare consultatie=" + getDataConsultatie() +
                 ", beneficiarReducere=" + beneficiarReducere +
                 ", tratat=" + tratat +
                 ", informatiiSuficiente=" + informatiiSuficiente +
@@ -40,5 +52,10 @@ public class Pensionar extends Pacient{
                 ", durereMasea=" + durereMasea +
                 ", vedereNeclara=" + vedereNeclara +
                 '}';
+    }
+
+    @Override
+    public boolean beneficiarReducere() {
+        return true;
     }
 }

@@ -1,8 +1,12 @@
 package PersonalMedical;
 
+import Pacienti.Copil;
+import Pacienti.Pacient;
+
 public class Dentist extends Medic {
     void consulta(){};
     void trateaza(){};
+    double costTratament=80;
 
     public Dentist(String nume, int nrMaximPacientiZilnic) {
         super(nume, nrMaximPacientiZilnic);
@@ -15,5 +19,14 @@ public class Dentist extends Medic {
                 ", nrMaximPacientiZilnic=" + getNrMaximPacientiZilnic() +
                 ", pacienti=" + getPacienti() +
                 '}';
+    }
+
+    @Override
+    public void consulta(Pacient pacient) {
+        pacient.setDurereMasea(false);
+        pacient.setTratat(true);
+        if (pacient.beneficiarReducere()){
+            pacient.setCostTratament(pacient.getCostTratament()+this.costTratament*90/100);
+        }
     }
 }

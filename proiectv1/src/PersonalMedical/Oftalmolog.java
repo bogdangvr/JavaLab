@@ -1,8 +1,12 @@
 package PersonalMedical;
 
+import Pacienti.Copil;
+import Pacienti.Pacient;
+
 public class Oftalmolog extends Medic {
     void consulta(){};
     void trateaza(){};
+    double costTratament=100;
 
     public Oftalmolog(String nume, int nrMaximPacientiZilnic) {
         super(nume, nrMaximPacientiZilnic);
@@ -16,5 +20,14 @@ public class Oftalmolog extends Medic {
                 ", nrMaximPacientiZilnic=" + getNrMaximPacientiZilnic() +
                 ", pacienti=" + getPacienti() +
                 '}';
+    }
+
+    @Override
+    public void consulta(Pacient pacient) {
+        pacient.setVedereNeclara(false);
+        pacient.setTratat(true);
+        if (pacient.beneficiarReducere()){
+            pacient.setCostTratament(pacient.getCostTratament()+this.costTratament*70/100);
+        }
     }
 }
