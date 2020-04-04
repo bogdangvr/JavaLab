@@ -3,25 +3,10 @@
 
 - Classes:
 
-    - Pacient: nume, varsta, id, dataConsultatie, dataAnalize, tratat, informatiiSuficiente (generat random), cost tratament;
-Address: region, city,street, streetnumber;
-Artist: name, description Contact: email, phone (of the account);
-Event: name, category, type, location, date, status, details, artist;
-In utils package:
-Category: MUSIC, SPORT, ENTERTAINMENT, CULTURAL;
-EventType: CONCERT, OPERA, MOVIE, FESTIVAL;
-Status: CLOSED, INCOMING, CURRENT;
-Location: name, address, details;
-Ticket: account, event, price;
-User: name, surname, age, address, contact;
-Interactions:
+    - Pacient = clasa abstracta cu metodele si datele: nume, varsta, id, dataConsultatie, dataAnalize, tratat, informatiiSuficiente (generat random), cost tratament, tensiuneAnormala, durereMasea, inflamareGat, vedereNeclara, idMedic, apel(Receptionist), beneficiarReducere(), mergeConsultatie(Medic), faceAnalize(Receptionist), getters&setters, compareTo;
+    	Clase ce mostenesc Pacient si implementeaza metodele care sunt abstracte in Pacient (apel(Receptionist), beneficiarReducere()):
+		- Copil;
+		- Pensionar;
+		- Adult;
+		
 
-AccountService: findbyId, getall, put, putall;
-AddressService: findbyId, getall, put, putall;
-ArtistService: findbyId, getall, put, putall;
-ContactService: findbyId, getall, put, putall;
-EventService: findbyId, getall, put, puall, getByArtist, getByType, getByCategory, getByStatus, getByLocation;
-LocationService: findbyId, getall, put, putall;
-TicketService: findbyId, getall, put, putall, getByEvent, getByAccount;
-UserService: findbyId, getall, put, putall;
-ModelsService: CreateEntities;
