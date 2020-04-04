@@ -4,8 +4,6 @@ import Pacienti.Copil;
 import Pacienti.Pacient;
 
 public class Orl extends Medic {
-    void consulta(){};
-    void trateaza(){};
     double costTratament=20;
 
     public Orl(String nume, int nrMaximPacientiZilnic) {

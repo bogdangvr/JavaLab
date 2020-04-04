@@ -4,8 +4,6 @@ import Pacienti.Copil;
 import Pacienti.Pacient;
 
 public class Oftalmolog extends Medic {
-    void consulta(){};
-    void trateaza(){};
     double costTratament=100;
 
     public Oftalmolog(String nume, int nrMaximPacientiZilnic) {

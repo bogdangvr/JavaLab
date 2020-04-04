@@ -10,7 +10,6 @@ public abstract class Medic {
     private int id;
     protected int nrMaximPacientiZilnic;
     protected int nrPacienti=0;
-    protected int nrPacientiTratati=0;
     private static int contorMedici = 0;
     private int ziDisponibila = 0;
     private int nrPacientiUltimaZi = 0;

@@ -4,8 +4,6 @@ import Pacienti.Copil;
 import Pacienti.Pacient;
 
 public class Pediatru extends Medic {
-    void consulta(){};
-    void trateaza(){};
     double costTratament=40;
 
     public Pediatru(String nume, int nrMaximPacientiZilnic) {
