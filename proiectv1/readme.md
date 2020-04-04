@@ -1,9 +1,9 @@
 # Documentatie proiect:
 # Aplicatie programari policlinica
 
-Classes:
+- Classes:
 
-Account: username, password, user;
+    - Pacient: nume, varsta, id, dataConsultatie, dataAnalize, tratat, informatiiSuficiente (generat random), cost tratament;
 Address: region, city,street, streetnumber;
 Artist: name, description Contact: email, phone (of the account);
 Event: name, category, type, location, date, status, details, artist;
