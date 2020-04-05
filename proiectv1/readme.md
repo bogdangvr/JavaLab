@@ -22,10 +22,16 @@
     - Laborator = clasa cu metodele si datele: nrPacientiTratati, nrPacienti, nrMaximPacientiZilnic, costAnalize, Vector<Integer> pacienti, getters&setters;
 	
 - Interactiuni:
+
 	Clasa Service are urmatoarele metode:
+	
 		-CrearePoliclinica(Medic[] listaMedici, int nrMedici, Laborator laborator) care returneaza un obiect de tipul Receptionist prin care initializam policlinica;
+		
 		-AfisarePoliclinica (Receptionist receptionist) care afiseaza date despre policlinica: medicii, tipul lor, capacitatea zilnica a laboratorului etc.;
+		
 		-Programeaza(List<Pacient> listaPacienti, int nrPacienti, Receptionist receptionist) care programeaza o lista de pacienti in functie de informatiiSuficiente;
+		
 		-TrecereaTimpului(List<Pacient> listaPacienti, int nrPacienti, Receptionist receptionist, int ziCurenta): am decis sa implementez o metoda care sa arate ordinea in care fiecare pacient ar merge la laborator/consultatii si ar fi tratat;
+		
 		-AfisareCostTratament (Pacient pacient) afiseaza costul tratamentului care a fost prescris unui pacient.
 	
