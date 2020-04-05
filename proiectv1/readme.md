@@ -1,5 +1,5 @@
 # Documentatie proiect:
-# Aplicatie programari policlinica
+# Aplicatie Policlinica:
 
 - Clase:
 
