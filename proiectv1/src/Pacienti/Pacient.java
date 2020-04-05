@@ -3,14 +3,12 @@ package Pacienti;
 import PersonalMedical.Medic;
 import PersonalMedical.Receptionist;
 
-import java.lang.Math;
-import java.util.Comparator;
-
 public abstract class Pacient implements Comparable<Pacient>{
     //date personale:
     private String nume;
     private int varsta;
     private int id;
+    //-1 inseamna ca nu este programat
     protected int dataConsultatie = -1;
     protected int dataAnalize = -1;
     protected boolean tratat=false;
@@ -28,11 +26,37 @@ public abstract class Pacient implements Comparable<Pacient>{
     //campuri utile:
     protected int idMedic;
 
+    //constructor
+    public Pacient(String nume, int varsta, int nrAfectiune) {
+        //generam random pentru fiecare pacient daca medicul
+        //are suficiente informatii pentru tratare de la inceput
+        //am decis sa o generez random pentru ca nimeni nu stie
+        //daca are suficiente informatii pana nu ii spune cineva avizat acest lucru
+        double rand = Math.random() * 10;
+        this.informatiiSuficiente= (int) rand % 2 == 0;
+        this.nume = nume;
+        this.varsta = varsta;
+        this.id=++contorPacienti;
+        switch (nrAfectiune){
+            case 1:
+                tensiuneAnormala = true;
+                break;
+            case 2:
+                inflamareGat = true;
+                break;
+            case 3:
+                durereMasea = true;
+                break;
+            case 4:
+                vedereNeclara = true;
+                break;
+        }
+    }
+
     //metode:
 
     //returneaza data programarii
     public abstract void apel(Receptionist receptionist);
-
     abstract public boolean beneficiarReducere();
 
 
@@ -67,21 +91,7 @@ public abstract class Pacient implements Comparable<Pacient>{
 
 
 
-    //constructor
-    public Pacient(String nume, int varsta) {
-        //generam random pentru fiecare pacient daca medicul
-        //are suficiente informatii pentru tratare de la inceput
-        double rand = Math.random() * 10;
-        if ((int)rand%2==0){
-            this.informatiiSuficiente=true;
-        }
-        else{
-            this.informatiiSuficiente=false;
-        }
-        this.nume = nume;
-        this.varsta = varsta;
-        this.id=++contorPacienti;
-    }
+
 
     //getters
     public String getNume() {
@@ -119,6 +129,21 @@ public abstract class Pacient implements Comparable<Pacient>{
     public int getIdMedic() {
         return idMedic;
     }
+
+    public int getDataConsultatie() {
+        return dataConsultatie;
+    }
+
+    public int getDataAnalize() {
+        return dataAnalize;
+    }
+
+    public double getCostTratament() {
+        return costTratament;
+    }
+
+    public boolean isTratat() { return tratat; }
+
 
 
     //setters
@@ -158,26 +183,12 @@ public abstract class Pacient implements Comparable<Pacient>{
         this.dataAnalize = dataAnalize;
     }
 
-    public int getDataConsultatie() {
-        return dataConsultatie;
-    }
-
-    public int getDataAnalize() {
-        return dataAnalize;
-    }
-
-    public boolean isTratat() {
-        return tratat;
-    }
-
     public void setIdMedic(int idMedic) {
         this.idMedic = idMedic;
     }
 
-    public double getCostTratament() {
-        return costTratament;
-    }
 
+    //functie pentru sortare
     @Override
     public int compareTo(Pacient o) {
         if (this.getDataConsultatie()==o.getDataConsultatie()){

@@ -3,23 +3,28 @@ package PersonalMedical;
 import Pacienti.Copil;
 import Pacienti.Pacient;
 
-import javax.smartcardio.Card;
 import java.util.Arrays;
 
 public class Receptionist {
-    private String nume;
-    private int varsta;
     //receptionistul are o "agenda" cu medicii si programul lor, dar si programul laboratorului
     Medic[] listaMedici;
     Laborator laborator;
     private int nrMedici;
 
-    public void setListaMedici(Medic[] listaMedici, int nrMedici){
+    //constructor
+    public Receptionist(Medic[] listaMedici, int nrMedici, Laborator laborator) {
+        this.listaMedici = listaMedici;
+        this.laborator = laborator;
         this.nrMedici = nrMedici;
-        this.listaMedici = new Medic[nrMedici];
-        for (int i=0; i<nrMedici; i++){
-            this.listaMedici[i] = listaMedici[i];
-        }
+    }
+
+    @Override
+    public String toString() {
+        return "Receptionist{" +
+                "listaMedici=" + Arrays.toString(listaMedici) +
+                ", laborator=" + laborator +
+                ", nrMedici=" + nrMedici +
+                '}';
     }
 
     public boolean verificaInformatiiSuficiente(Pacient pacient){
@@ -175,30 +180,30 @@ public class Receptionist {
             }
         }
         return ziProgramare;
-    };
+    }
 
     public int programeazaAnalize(Pacient pacient){
         int ziProgramare = laborator.getNrPacienti()/laborator.getNrMaximPacientiZilnic();
-        System.out.println(ziProgramare);
         pacient.setDataAnalize(ziProgramare);
         laborator.setNrPacienti(laborator.getNrPacienti()+1);
         laborator.getPacienti().add(pacient.getId());
         return ziProgramare;
-    };
-
-    public Receptionist(String nume, int varsta) {
-        this.nume = nume;
-        this.varsta = varsta;
     }
 
-    @Override
-    public String toString() {
-        return "Receptionist{" +
-                "nume='" + nume + '\'' +
-                ", varsta=" + varsta +
-                '}';
+    //getters
+    public Laborator getLaborator() {
+        return laborator;
     }
 
+    public Medic[] getListaMedici() {
+        return listaMedici;
+    }
+
+    public int getNrMedici() {
+        return nrMedici;
+    }
+
+    //setters
     public void setNrMedici(int nrMedici) {
         this.nrMedici = nrMedici;
     }
@@ -207,8 +212,5 @@ public class Receptionist {
         this.laborator = laborator;
     }
 
-    public Laborator getLaborator() {
-        return laborator;
-    }
 
 }

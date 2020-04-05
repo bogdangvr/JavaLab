@@ -9,6 +9,7 @@ public class Dentist extends Medic {
     public Dentist(String nume, int nrMaximPacientiZilnic) {
         super(nume, nrMaximPacientiZilnic);
     }
+
     @Override
     public String toString() {
         return "Dentist{" +

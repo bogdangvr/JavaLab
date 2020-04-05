@@ -39,6 +39,7 @@ public abstract class Medic {
         this.nrMaximPacientiZilnic = nrMaximPacientiZilnic;
     }
 
+    //getters
     public String getNume() {
         return nume;
     }
@@ -63,15 +64,18 @@ public abstract class Medic {
         return ziDisponibila;
     }
 
-    public void setZiDisponibila(int ziDisponibila) {
-        this.ziDisponibila = ziDisponibila;
-    }
-
     public int getNrPacientiUltimaZi() {
         return nrPacientiUltimaZi;
     }
 
+
+    //setters
     public void setNrPacientiUltimaZi(int nrPacientiUltimaZi) {
         this.nrPacientiUltimaZi = nrPacientiUltimaZi;
     }
+
+    public void setZiDisponibila(int ziDisponibila) {
+        this.ziDisponibila = ziDisponibila;
+    }
+
 }

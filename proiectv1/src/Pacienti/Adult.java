@@ -7,20 +7,7 @@ public class Adult extends Pacient{
     final private boolean beneficiarReducere=false;
 
     public Adult(String nume, int varsta, int afectiune) {
-        super(nume, varsta);
-
-        if (afectiune==1){
-            this.tensiuneAnormala=true;
-        }
-        if (afectiune==2){
-            this.inflamareGat=true;
-        }
-        if (afectiune==3){
-            this.durereMasea=true;
-        }
-        if (afectiune==4){
-            this.vedereNeclara=true;
-        }
+        super(nume, varsta, afectiune);
     }
 
 

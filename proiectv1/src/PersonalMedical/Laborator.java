@@ -9,33 +9,7 @@ public class Laborator {
     private double costAnalize = 30;
     private Vector<Integer> pacienti = new Vector<>();
 
-    public Vector<Integer> getPacienti() {
-        return pacienti;
-    }
 
-    public int getNrPacienti() {
-        return nrPacienti;
-    }
-
-    public void setNrPacienti(int nrPacienti) {
-        this.nrPacienti = nrPacienti;
-    }
-
-    public int getNrPacientiTratati() {
-        return nrPacientiTratati;
-    }
-
-    public void setNrPacientiTratati(int nrPacientiTratati) {
-        this.nrPacientiTratati = nrPacientiTratati;
-    }
-
-    public int getNrMaximPacientiZilnic() {
-        return nrMaximPacientiZilnic;
-    }
-
-    public void setNrMaximPacientiZilnic(int nrMaximPacientiZilnic) {
-        this.nrMaximPacientiZilnic = nrMaximPacientiZilnic;
-    }
 
     public double getCostAnalize() {
         return costAnalize;
@@ -51,4 +25,40 @@ public class Laborator {
                 ", cost analize=" + this.getCostAnalize() +
                 '}';
     }
+
+    public Laborator(int nrMaximPacientiZilnic, double costAnalize) {
+        this.nrMaximPacientiZilnic = nrMaximPacientiZilnic;
+        this.costAnalize = costAnalize;
+    }
+
+    //getters
+    public Vector<Integer> getPacienti() {
+        return pacienti;
+    }
+
+    public int getNrPacienti() {
+        return nrPacienti;
+    }
+
+    public int getNrPacientiTratati() {
+        return nrPacientiTratati;
+    }
+
+    public int getNrMaximPacientiZilnic() {
+        return nrMaximPacientiZilnic;
+    }
+
+    //setters
+    public void setNrPacientiTratati(int nrPacientiTratati) {
+        this.nrPacientiTratati = nrPacientiTratati;
+    }
+
+    public void setNrPacienti(int nrPacienti) {
+        this.nrPacienti = nrPacienti;
+    }
+
+    public void setNrMaximPacientiZilnic(int nrMaximPacientiZilnic) {
+        this.nrMaximPacientiZilnic = nrMaximPacientiZilnic;
+    }
+
 }
