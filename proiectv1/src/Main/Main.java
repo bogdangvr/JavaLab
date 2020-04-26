@@ -5,13 +5,10 @@ import Pacienti.Copil;
 import Pacienti.Pacient;
 import Pacienti.Pensionar;
 import PersonalMedical.*;
-import Services.Reader;
+import Utilities.Reader;
 import Services.Service;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.Writer;
 import java.util.*;
 
 public class Main {

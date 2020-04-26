@@ -2,7 +2,7 @@ package Pacienti;
 
 import PersonalMedical.Medic;
 import PersonalMedical.Receptionist;
-import Services.Writer;
+import Utilities.Writer;
 
 import java.io.IOException;
 

@@ -4,6 +4,7 @@ import Pacienti.Pacient;
 import PersonalMedical.Laborator;
 import PersonalMedical.Medic;
 import PersonalMedical.Receptionist;
+import Utilities.Writer;
 
 import java.io.IOException;
 import java.util.Collections;
