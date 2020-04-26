@@ -35,3 +35,4 @@
 		
 		-AfisareCostTratament (Pacient pacient) afiseaza costul tratamentului care a fost prescris unui pacient.
 	
+- Pachetul Utilities contine o clasa Writer folosita pentru outputul in format CSV al auditului si o clasa Reader folosita pentru a citi datele din fisiere de tip CSV
