@@ -2,6 +2,9 @@ package Pacienti;
 
 import PersonalMedical.Medic;
 import PersonalMedical.Receptionist;
+import Services.Writer;
+
+import java.io.IOException;
 
 public abstract class Pacient implements Comparable<Pacient>{
     //date personale:
@@ -25,6 +28,9 @@ public abstract class Pacient implements Comparable<Pacient>{
 
     //campuri utile:
     protected int idMedic;
+
+    //serviciul de scriere:
+    Writer writer = Writer.getInstance();
 
     //constructor
     public Pacient(String nume, int varsta, int nrAfectiune) {
@@ -60,11 +66,12 @@ public abstract class Pacient implements Comparable<Pacient>{
     abstract public boolean beneficiarReducere();
 
 
-    public void mergeConsultatie(Medic medic){
+    public void mergeConsultatie(Medic medic) throws IOException {
         medic.consulta(this);
+        writer.write("Pacientul " + this.toString() + "a mers la consultatie");
     }
 
-    public void faceAnalize(Receptionist receptionist){
+    public void faceAnalize(Receptionist receptionist) throws IOException {
         this.setInformatiiSuficiente(true);
         this.setDataAnalize(-1);
         if (this.beneficiarReducere()){
@@ -74,18 +81,18 @@ public abstract class Pacient implements Comparable<Pacient>{
             costTratament+=receptionist.getLaborator().getCostAnalize();
         }
         this.apel(receptionist);
-
+        writer.write("Pacientul " + this.toString() + "a facut analize");
     }
 
     @Override
     public String toString() {
         return "Pacient{" +
                 "nume='" + nume +
-                ", varsta=" + varsta +
-                ", id=" + id +
-                ", tratat=" + tratat +
-                ", data programare laborator=" + getDataAnalize() +
-                ", data programare consultatie=" + getDataConsultatie() +
+                "; varsta=" + varsta +
+                "; id=" + id +
+                "; tratat=" + tratat +
+                "; data programare laborator=" + getDataAnalize() +
+                "; data programare consultatie=" + getDataConsultatie() +
                 '}';
     }
 

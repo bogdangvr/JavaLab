@@ -5,43 +5,48 @@ import PersonalMedical.Laborator;
 import PersonalMedical.Medic;
 import PersonalMedical.Receptionist;
 
+import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
 public class Service {
 
-    public Receptionist CrearePoliclinica(Medic[] listaMedici, int nrMedici, Laborator laborator){
+    private static Writer writer = Writer.getInstance();
+
+    public Receptionist crearePoliclinica(Medic[] listaMedici, int nrMedici, Laborator laborator) throws IOException {
 
         Receptionist receptionist = new Receptionist(listaMedici, nrMedici, laborator);
+        writer.write("Apel de crearePoliclinica");
         return receptionist;
 
     }
 
-    public void AfisarePoliclinica (Receptionist receptionist){
+    public void afisarePoliclinica (Receptionist receptionist) throws IOException {
 
+        writer.write("Apel de afisarePoliclinica");
         System.out.println(receptionist);
 
     }
 
-    public void AfisarePacienti (List<Pacient> listaPacienti, int nrPacienti){
+    public void afisarePacienti (List<Pacient> listaPacienti, int nrPacienti) throws IOException {
 
         for (int i=0; i<nrPacienti; i++){
             System.out.println(listaPacienti.get(i));
         }
-
+        writer.write("Apel de afisarePoliclinica");
     }
 
-    public void Programeaza(List<Pacient> listaPacienti, int nrPacienti, Receptionist receptionist){
+    public void programeaza(List<Pacient> listaPacienti, int nrPacienti, Receptionist receptionist) throws IOException{
 
         for (int i=0; i< nrPacienti; i++){
 
             listaPacienti.get(i).apel(receptionist);
 
         }
-
+        writer.write("Apel de programeaza");
     }
 
-    public void TrecereaTimpului(List<Pacient> listaPacienti, int nrPacienti, Receptionist receptionist, int ziCurenta){
+    public void trecereaTimpului(List<Pacient> listaPacienti, int nrPacienti, Receptionist receptionist, int ziCurenta) throws IOException{
 
         int nrPacientiTratati=0;
 
@@ -84,12 +89,15 @@ public class Service {
             }
             ziCurenta++;
         }
+        writer.write("Apel de trecereaTimpului");
     }
 
-    public void AfisareCostTratament (Pacient pacient){
+    public void afisareCostTratament (Pacient pacient) throws IOException{
 
         System.out.println(pacient.getCostTratament());
-
+        writer.write("Apel de afisareCostTratament");
     }
+
+
 
 }

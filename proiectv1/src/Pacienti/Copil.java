@@ -22,16 +22,16 @@ public class Copil extends Pacient{
     public String toString() {
         return "Copil{" +
                 "nume=" + getNume() +
-                ", varsta=" + getVarsta() +
-                ", id=" + getId() +
-                ", data programare laborator=" + getDataAnalize() +
-                ", data programare consultatie=" + getDataConsultatie() +
-                ", tratat=" + tratat +
-                ", informatiiSuficiente=" + informatiiSuficiente +
-                ", tensiuneAnormala=" + tensiuneAnormala +
-                ", inflamareGat=" + inflamareGat +
-                ", durereMasea=" + durereMasea +
-                ", vedereNeclara=" + vedereNeclara +
+                "; varsta=" + getVarsta() +
+                "; id=" + getId() +
+                "; data programare laborator=" + getDataAnalize() +
+                "; data programare consultatie=" + getDataConsultatie() +
+                "; tratat=" + tratat +
+                "; informatiiSuficiente=" + informatiiSuficiente +
+                "; tensiuneAnormala=" + tensiuneAnormala +
+                "; inflamareGat=" + inflamareGat +
+                "; durereMasea=" + durereMasea +
+                "; vedereNeclara=" + vedereNeclara +
                 '}';
     }
 

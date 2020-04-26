@@ -5,64 +5,77 @@ import Pacienti.Copil;
 import Pacienti.Pacient;
 import Pacienti.Pensionar;
 import PersonalMedical.*;
+import Services.Reader;
 import Services.Service;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.Writer;
 import java.util.*;
 
 public class Main {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         Service MyService = new Service();
 
-        //crearea personalului medical
-        Laborator laborator = new Laborator(2, 30);
+        Reader reader = Reader.getInstance();
+        String[][] laboratorFile = reader.read("laborator.csv");
+        Laborator laborator = new Laborator(Integer.parseInt(laboratorFile[0][0]), Integer.parseInt(laboratorFile[0][1]));
+
+        //citirea personalului medical
+
+
         Medic[] listaMedici = new Medic[10];
-        listaMedici[0] = new Pediatru("Ped1", 2);
-        listaMedici[1] = new Pediatru("Ped2", 3);
-        listaMedici[2] = new Dentist("Den1", 6);
-        listaMedici[3] = new Dentist("Den2", 4);
-        listaMedici[4] = new Oftalmolog("Oft1", 8);
-        listaMedici[5] = new Oftalmolog("Oft2", 5);
-        listaMedici[6] = new Orl("Orl1", 10);
-        listaMedici[7] = new Orl("Orl2", 8);
-        listaMedici[8] = new Cardiolog("Card1", 2);
-        listaMedici[9] = new Cardiolog("Card2", 2);
+        String[][] medicFile = reader.read("medic.csv");
+        listaMedici[0] = new Pediatru(medicFile[0][0], Integer.parseInt(medicFile[0][1]));
+        listaMedici[1] = new Pediatru(medicFile[1][0], Integer.parseInt(medicFile[1][1]));
+        listaMedici[2] = new Dentist(medicFile[2][0], Integer.parseInt(medicFile[2][1]));
+        listaMedici[3] = new Dentist(medicFile[3][0], Integer.parseInt(medicFile[3][1]));
+        listaMedici[4] = new Oftalmolog(medicFile[4][0], Integer.parseInt(medicFile[4][1]));
+        listaMedici[5] = new Oftalmolog(medicFile[5][0], Integer.parseInt(medicFile[5][1]));
+        listaMedici[6] = new Orl(medicFile[6][0], Integer.parseInt(medicFile[6][1]));
+        listaMedici[7] = new Orl(medicFile[7][0], Integer.parseInt(medicFile[7][1]));
+        listaMedici[8] = new Cardiolog(medicFile[8][0], Integer.parseInt(medicFile[8][1]));
+        listaMedici[9] = new Cardiolog(medicFile[9][0], Integer.parseInt(medicFile[9][1]));
 
         //un intermediar care de fapt face ce in realitate face un receptionist
         //daca un pacient are date suficiente, ii programeaza o consultatie,
         //altfel, ii programeaza o vizita la laborator pentru analize
-        Receptionist receptionist = MyService.CrearePoliclinica(listaMedici, 10, laborator);
+        Receptionist receptionist = MyService.crearePoliclinica(listaMedici, 10, laborator);
 
-        MyService.AfisarePoliclinica(receptionist);
+        MyService.afisarePoliclinica(receptionist);
 
-        //crearea listei de pacienti
+        //citirea listei de pacienti
         List<Pacient> listaPacienti = new ArrayList<Pacient>();
         int nrPacienti = 10;
-        listaPacienti.add(new Adult("Denisa", 21, 4));
-        listaPacienti.add(new Adult("Vlad", 21, 4));
-        listaPacienti.add(new Adult("Rares", 51, 2));
-        listaPacienti.add(new Adult("Alex", 21, 4));
-        listaPacienti.add(new Adult("Bianca", 20, 4));
-        listaPacienti.add(new Pensionar("Ion", 71, 1));
-        listaPacienti.add(new Copil("Ionut", 11, 3));
-        listaPacienti.add(new Copil("Mihai", 7, 1));
-        listaPacienti.add(new Pensionar("Ileana", 67, 1));
-        listaPacienti.add(new Adult("Andrei", 31, 3));
+        String[][] pacientFile = reader.read("pacient.csv");
+        listaPacienti.add(new Adult(pacientFile[0][0], Integer.parseInt(pacientFile[0][1]), Integer.parseInt(pacientFile[0][2])));
+        listaPacienti.add(new Adult(pacientFile[1][0], Integer.parseInt(pacientFile[1][1]), Integer.parseInt(pacientFile[1][2])));
+        listaPacienti.add(new Adult(pacientFile[2][0], Integer.parseInt(pacientFile[2][1]), Integer.parseInt(pacientFile[2][2])));
+        listaPacienti.add(new Adult(pacientFile[3][0], Integer.parseInt(pacientFile[3][1]), Integer.parseInt(pacientFile[3][2])));
+        listaPacienti.add(new Adult(pacientFile[4][0], Integer.parseInt(pacientFile[4][1]), Integer.parseInt(pacientFile[4][2])));
+        listaPacienti.add(new Pensionar(pacientFile[5][0], Integer.parseInt(pacientFile[5][1]), Integer.parseInt(pacientFile[5][2])));
+        listaPacienti.add(new Copil(pacientFile[6][0], Integer.parseInt(pacientFile[6][1]), Integer.parseInt(pacientFile[6][2])));
+        listaPacienti.add(new Copil(pacientFile[7][0], Integer.parseInt(pacientFile[7][1]), Integer.parseInt(pacientFile[7][2])));
+        listaPacienti.add(new Pensionar(pacientFile[8][0], Integer.parseInt(pacientFile[8][1]), Integer.parseInt(pacientFile[8][2])));
+        listaPacienti.add(new Adult(pacientFile[9][0], Integer.parseInt(pacientFile[9][1]), Integer.parseInt(pacientFile[9][2])));
+
 
         //programam toti pacientii
-        MyService.Programeaza(listaPacienti, nrPacienti, receptionist);
+        MyService.programeaza(listaPacienti, nrPacienti, receptionist);
 
         //afisam toti pacientii inregitrati si programati, fie la laborator, fie la consultatie
-        MyService.AfisarePacienti(listaPacienti, 10);
+        MyService.afisarePacienti(listaPacienti, 10);
 
         //simulam procesul de trecere a timpului: toti pacientii care trebuie sa viziteze laboratorul o vor face iar apoi
         //vor fi programati la o vizita la medic; fiecare pacient apoi este consultat si i se prescrie un tratament
-        MyService.TrecereaTimpului(listaPacienti, nrPacienti, receptionist, 0);
+        MyService.trecereaTimpului(listaPacienti, nrPacienti, receptionist, 0);
 
         //serviciu ce afiseaza costul tratamentului pentru un pacient
-        MyService.AfisareCostTratament(listaPacienti.get(0));
+        MyService.afisareCostTratament(listaPacienti.get(0));
 
     }
 }

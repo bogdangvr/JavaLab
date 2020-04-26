@@ -25,17 +25,17 @@ public class Adult extends Pacient{
     public String toString() {
         return "Adult{" +
                 "nume=" + getNume() +
-                ", varsta=" + getVarsta() +
-                ", id=" + getId() +
-                ", data programare laborator=" + getDataAnalize() +
-                ", data programare consultatie=" + getDataConsultatie() +
-                ", beneficiarReducere=" + beneficiarReducere +
-                ", tratat=" + tratat +
-                ", informatiiSuficiente=" + informatiiSuficiente +
-                ", tensiuneAnormala=" + tensiuneAnormala +
-                ", inflamareGat=" + inflamareGat +
-                ", durereMasea=" + durereMasea +
-                ", vedereNeclara=" + vedereNeclara +
+                "; varsta=" + getVarsta() +
+                "; id=" + getId() +
+                "; data programare laborator=" + getDataAnalize() +
+                "; data programare consultatie=" + getDataConsultatie() +
+                "; beneficiarReducere=" + beneficiarReducere +
+                "; tratat=" + tratat +
+                "; informatiiSuficiente=" + informatiiSuficiente +
+                "; tensiuneAnormala=" + tensiuneAnormala +
+                "; inflamareGat=" + inflamareGat +
+                "; durereMasea=" + durereMasea +
+                "; vedereNeclara=" + vedereNeclara +
                 '}';
     }
 
