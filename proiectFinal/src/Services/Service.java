@@ -205,7 +205,18 @@ public class Service {
         }
         return "0";
     }
+    public String dataProgramarii (List<Pacient> listaPacienti, int nrPacienti, String nume, int varsta, int afectiune) throws IOException {
+        Thread t = Thread.currentThread();
+        writer.write("Apel de dataProgramare", t.getName());
 
+        for (int i=0; i<nrPacienti; i++){
+            if (listaPacienti.get(i).getNume().equals(nume) && listaPacienti.get(i).getVarsta() == varsta && listaPacienti.get(i).getAfectiune() == afectiune){
+                return String.valueOf(listaPacienti.get(i).getDataConsultatie());
+            }
+
+        }
+        return "-1";
+    }
 
 
 }
