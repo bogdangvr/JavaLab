@@ -152,11 +152,13 @@ public class Main {
             JButton butonEditeaza = new JButton("Editeaza pacient");
             JButton butonSterge = new JButton("Sterge pacient");
             JButton butonCost = new JButton("Calcul cost tratament");
+            JButton butonData = new JButton("Data programarii");
             JButton butonInapoi = new JButton("Inapoi");
             butoane.add(butonAdauga);
             butoane.add(butonEditeaza);
             butoane.add(butonSterge);
             butoane.add(butonCost);
+            butoane.add(butonData);
             butoane.add(butonInapoi);
             gestionare.add(topGestionare,BorderLayout.NORTH);
             gestionare.add(introducereDate,BorderLayout.CENTER);
@@ -241,6 +243,22 @@ public class Main {
                         e.printStackTrace();
                     }
                     JOptionPane.showMessageDialog(home, "Costul tratamentului este:" + cost);
+                }
+            });
+
+            butonData.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent actionEvent) {
+                    String nume = numeIntrodus.getText();
+                    int varsta = Integer.parseInt(varstaIntrodusa.getText());
+                    int afectiune = Integer.parseInt(afectiuneaIntrodusa.getText());
+                    String cost = null;
+                    try {
+                        cost = MyService.dataProgramarii(finalListaPacienti,nrPacienti,nume,varsta,afectiune);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    JOptionPane.showMessageDialog(home, "Data programarii este:" + cost);
                 }
             });
 
